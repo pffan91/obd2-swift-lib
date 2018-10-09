@@ -52,7 +52,7 @@ class Parser {
     }
     
     func isDataResponse(_ str : String)    -> Bool    {
-      if str.isEmpty {
+      if str == "" {
         let unwrapStr = Character.init("")
         let str = String(describing: unwrapStr)
         let isDigit = Int(str) != nil
