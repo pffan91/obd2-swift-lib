@@ -51,11 +51,18 @@ class Parser {
       return str.hasPrefix("AUTO")
     }
     
-    func isDataResponse(_ str : String)	-> Bool	{
-      let unwrapStr = str.first ?? Character.init("")
-      let str = String(describing: unwrapStr)
-      let isDigit = Int(str) != nil
-      return isDigit // || isSerching(str)
+    func isDataResponse(_ str : String)    -> Bool    {
+      if str.isEmpty {
+        let unwrapStr = Character.init("")
+        let str = String(describing: unwrapStr)
+        let isDigit = Int(str) != nil
+        return isDigit // || isSerching(str)
+      } else {
+        let unwrapStr = str.first ?? Character.init("")
+        let str = String(describing: unwrapStr)
+        let isDigit = Int(str) != nil
+        return isDigit // || isSerching(str)
+      }
     }
     
     func isATResponse(_ str : [Int8])	-> Bool	{
